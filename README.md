@@ -2,8 +2,7 @@
 
 ## System Configs
 
-engineer@engineer-PC
---------------------
+```
 OS: Ubuntu 20.04.1 LTS x86_64
 Host: B250-HD3
 Kernel: 5.4.0-56-generic
@@ -19,65 +18,67 @@ CPU: Intel i7-7700 (8) @ 4.200GHz
 GPU: NVIDIA GeForce GTX 1050 Ti (Gigabyte G1 Gaming)
 GPU: NVIDIA GeForce GTX 1050    (Gigabyte G1 Gaming)
 Memory: 5530MiB / 32076MiB
+```
 
 ## Perpherials
 
 - Kensington Slimblade
 - JBL Pebbles
 - HHKB
-Monitors
- - 24" 1920x1080 x 4
- - 32" 2560x1440 x 2
+
+__Monitors__
+  - 24" 1920x1080 x 4
+  - 32" 2560x1440 x 2
 
 ## Displays Card Config
 
 ### Display Map
-------
-|24|36|24|
-------
-|24|32|24|
 
-NVIDIA GeForce GTX 1050
- - 24"(HDMI)-32"(DVI)-34"(HDMI)
-NVIDIA GeForce GTX 1050 Ti
- - 24"(HDMI)-32"(DVI)-34"(HDMI)
+| 24 | 32 | 24 |
+|:-:|:-:|:-:|
+| 24 | 32 | 24 |
+
+- NVIDIA GeForce GTX 1050
+   - 24"(HDMI)-32"(DVI)-34"(HDMI)
+- NVIDIA GeForce GTX 1050 Ti
+   - 24"(HDMI)-32"(DVI)-34"(HDMI)
 
 ## Features
 
 ### Software
 
 - Vim
- - Mouse support
- - system-wide clipboard support
+  - Mouse support
+  - system-wide clipboard support
 - Tmux
- - mouse & color support
+  - mouse & color support
 - fcitx
- - Chinese Input in Awesome WM
- - Quick Table (You may install your own preferences)
+  - Chinese Input in Awesome WM
+  - Quick Table (You may install your own preferences)
 - Intellj ideavim
- - Arrow key support
- - Shortcut for __;__ to __:__
- - Ruler
- - Systemwide clipboard support
+  - Arrow key support
+  - Shortcut for __;__ to __:__
+  - Ruler
+  - Systemwide clipboard support
 - Zsh
- - add antigen and custom alias
-  - add git, command-not-found, docker, auto completions plugin
-  - by default it use powerlevel9k theme
- - l = ls -la
- - c = clear
- - pbcopy = copy stdoutput to systemwide clipboard
- - pbpaste = reverse pbcopy
- - ll = ls -laf
- - gaa = git add .
- - gc = git commit
+  - add antigen and custom alias
+   - add git, command-not-found, docker, auto completions plugin
+   - by default it use powerlevel9k theme
+  - l = ls -la
+  - c = clear
+  - pbcopy = copy stdoutput to systemwide clipboard
+  - pbpaste = reverse pbcopy
+  - ll = ls -laf
+  - gaa = git add .
+  - gc = git commit
 
 ### Hardware
 
 - Kensington Slimblade
- - Fix top left button middle click is not working issue
- - Add a new feature to top left button, you can now perform a 4-way scrolling via clicking top-left btn at the sametime
+  - Fix top left button middle click is not working issue
+  - Add a new feature to top left button, you can now perform a 4-way scrolling via clicking top-left btn at the sametime
 - JBL Pebbles
- - Add __vol-up.sh__ & __vol-down.sh__ for cli/hot keys config to toggle volume
+  - Add __vol-up.sh__ & __vol-down.sh__ for cli/hot keys config to toggle volume
 
 ## Setup
 
