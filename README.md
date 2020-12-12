@@ -169,13 +169,20 @@ cp dotfiles/.zshrc_extends ~
 echo "source .zshrc_extends" >> ~/.zshrc
 ```
 
-#### xfce Custom Themes
+#### base Awesome UI via xfce gtk3+ custom themes & icons
 
 Credits
 - [mayu_dark_theme](https://www.xfce-look.org/p/1408765/)
 - [mc_os_ctlina_xfce_dark](https://www.xfce-look.org/p/1326265/)
 - [qogir](https://www.xfce-look.org/search/projectSearchText/qogir)
+- [material black blueberry numix flat](https://www.xfce-look.org/p/1333828/)
+- [mb pistachio suru glow](https://www.gnome-look.org/p/1333360/)
+
 
 ```
 cp -r dotfiles/.themes ~
+cp -r dotfiles/.icons ~
+
+sudo apt install lxappearance
+lxappearance # config when awesomewm is your current wm
 ```
