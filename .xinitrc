@@ -1,0 +1,3 @@
+CLUTTER_IM_MODULE=fcitx
+QT4_IM_MODULE=fcitx
+GTK_IM_MODULE=fcitx

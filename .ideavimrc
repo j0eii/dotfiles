@@ -1,0 +1,22 @@
+set clipboard+=unnamed
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+set sidescroll=1
+set ruler
+nnoremap : ;
+nnoremap ; :
+vnoremap : ;
+vnoremap ; :
+
+set visualbell
+set noerrorbells
+
+nnoremap <A-J> <C-W>j
+nnoremap <A-K> <C-W>k
+nnoremap <A-L> <C-W>l
+nnoremap <A-H> <C-W>h
+nnoremap <C-U> gT
+nnoremap <C-I> gt
