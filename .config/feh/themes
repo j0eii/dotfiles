@@ -1,0 +1,1 @@
+feh -B black \ -d \ -N \ --geometry 500x500 \ --auto-zoom --scale-down

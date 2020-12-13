@@ -73,6 +73,9 @@ __Monitors__
   - gc = git commit
  - xfce Terminal
   - load a few themes from [bas16-xfce4-terminal](https://github.com/afq984/base16-xfce4-terminal)
+ - feh (= MacOS space key to preview image file)
+  - change to default size as 500x500
+  - auto scale and zoom to prevent over zoomed
 
 ### Hardware
 
@@ -191,7 +194,20 @@ lxappearance # config when awesomewm is your current wm
 
 #### xfce4 terminal
 
-```
+```bash
 mkdir -p ~/.local/share/xfce4/terminal/colorschemes
 cp -r dotfiles/.xfce4-colorschemes/*.theme ~/.local/share/xfce4/terminal/colorschemes
 ```
+
+Then, config in xfce4 terminal perferences > appearances
+
+
+### feh
+
+```bash
+cp -r dotfiles/.config/feh ~/.config/
+```
+
+You may now try to use space key to preview any images in your file manager (My preferences is Thunar).
+
+
