@@ -47,6 +47,9 @@ __Monitors__
 
 ### Software
 
+- NVim
+  - Plugging to original vim
+  - fix the vim <-> tmux <-> system clipboard sometimes broken issue
 - Vim
   - Mouse support
   - system-wide clipboard support
@@ -144,6 +147,13 @@ cp dotfiles/.vimrc ~
 
 ```
 cp dotfiles/.ideavimrc ~
+```
+
+#### NVim
+```
+sudo apt install neovim
+mkdir -p ~/.config/nvim
+cp -r dotfiles/.config/nvim/* ~/.config/nvim
 ```
 
 #### fcitx
