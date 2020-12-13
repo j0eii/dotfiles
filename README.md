@@ -71,6 +71,8 @@ __Monitors__
   - ll = ls -laf
   - gaa = git add .
   - gc = git commit
+ - xfce Terminal
+  - load a few themes from [bas16-xfce4-terminal](https://github.com/afq984/base16-xfce4-terminal)
 
 ### Hardware
 
@@ -185,4 +187,11 @@ cp -r dotfiles/.icons ~
 
 sudo apt install lxappearance
 lxappearance # config when awesomewm is your current wm
+```
+
+#### xfce4 terminal
+
+```
+mkdir -p ~/.local/share/xfce4/terminal/colorschemes
+cp -r dotfiles/.xfce4-colorschemes/*.theme ~/.local/share/xfce4/terminal/colorschemes
 ```
