@@ -50,7 +50,9 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.useless_gap=5
+beautiful.useless_gap=10
+-- #beautiful.font="Hack Nerd Font 14"
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -194,13 +196,24 @@ screen.fake_add(4480,0,1920,1080)
 screen.fake_add(4480,1080,1920,1080)
 --screen[3]:fake_resize(1920,360,2560,1440)
 --screen[3]:fake_resize(0,1080,1920,1080)
+--
+--1920x1080_left_bottom.png
+--1920x1080_left_top.png
+--1920x1080_right_top.png
+--2440x1440_bottom.png
+--2440x1440_top.png
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_top.png',screen[1],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_bottom.png',screen[2],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom.png',screen[3],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_top.png',screen[4],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_bottom.png',screen[5],true)
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
-    set_wallpaper(s)
+    -- set_wallpaper(s)
 
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
@@ -230,7 +243,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -319,6 +332,8 @@ globalkeys = gears.table.join(
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
+    --awful.key({ modkey, "Mod1"    }, "Down",     function () awful.client.incwfact( 0.05)    end),
+    --awful.key({ modkey, "Mod1"    }, "Up",     function () awful.client.incwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
