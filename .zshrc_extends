@@ -19,10 +19,10 @@ export TERM="xterm-256color"
 function jj() {
     if [ "$1" != "" ]
     then
-      vim ~/snippets/$1
+      vim "$HOME/snippets/$1"
     else
-      vim ~/snippets/$(date +%F)
+      vim "$HOME/snippets/$(date +%F)"
     fi
 }
-alias jj="vim ~/snippets/$(date +%F)"
+
 
