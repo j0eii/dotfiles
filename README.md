@@ -88,13 +88,22 @@ __Monitors__
 - JBL Pebbles
   - Add __vol-up.sh__ & __vol-down.sh__ for cli/hot keys config to toggle volume
 
-## Setup
+## Installation
 
 ### Global Configs
 
 git clone this repository and copy stuff that only you need in your home directory.
 
-You also need to install [__Hack Nerd Fonts__](https://www.nerdfonts.com/font-downloads) .
+clone this repository as follows:
+
+```bash
+git clone --recursive https://github.com/j0eii/dotfiles.git
+
+sudo apt install compton 
+sudo apt install fcitx fcitx-table-quick-classic
+```
+
+You also need to install [__Hack Nerd Font__](https://www.nerdfonts.com/font-downloads) and [__Hack Font__](https://sourcefoundry.org/hack/).
 
 ### Hardware
 
@@ -221,3 +230,34 @@ cp -r dotfiles/.config/feh ~/.config/
 You may now try to use space key to preview any images in your file manager (My preferences is Thunar).
 
 
+### Others
+
+Here are another tools that I install a new linux desktop:
+
+```bash 
+sudo apt install tmux 
+sudo apt install pfetch
+sudo apt install neofetch
+sudo apt install polybar
+sudo apt install calcurse
+sudo apt install evdev
+sudo apt install fcitx fcitx-table-quick-classic fcitx-configtool
+sudo apt install inkscape
+sudo apt install lxappearance
+sudo apt install compton
+sudo apt install alacritty
+sudo apt install python
+sudo apt install pip
+sudo apt install python-pip
+sudo apt install exiftool
+sudo apt install tig
+sudo apt install neovim
+sudo apt install rofi
+sudo apt install hollywood
+sudo apt install cmatrix
+sudo apt install wakeonlan
+sudo apt install nmap
+sudo apt install dbeaver
+sudo apt install unrar
+sudo apt install openjdk-11-jre openjdk-11-jdk
+```
