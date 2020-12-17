@@ -188,12 +188,13 @@ end
 --local new_width2 = geo.width - new_width
 --screen[1]:fake_resize(geo.x, geo.y, new_width, geo.height)
 --screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
---screen[0]:fake_resize(0,0,1920,1080)
-screen[1]:fake_resize(0,0,1920,1080)
-screen[2]:fake_resize(0,1080,1920,1080)
-screen.fake_add(1920,360,2560,1440)
-screen.fake_add(4480,0,1920,1080)
-screen.fake_add(4480,1080,1920,1080)
+--screen[0]:fake_resize(0,360,1920,1080)
+screen[1]:fake_resize(0,360,1920,1080)
+screen[2]:fake_resize(0,1440,1920,1080)
+screen.fake_add(1920,0,2560,1440)
+screen.fake_add(1920,1440,2560,1440)
+screen.fake_add(4480,360,1920,1080)
+screen.fake_add(4480,1440,1920,1080)
 --screen[3]:fake_resize(1920,360,2560,1440)
 --screen[3]:fake_resize(0,1080,1920,1080)
 --
@@ -202,18 +203,19 @@ screen.fake_add(4480,1080,1920,1080)
 --1920x1080_right_top.png
 --2440x1440_bottom.png
 --2440x1440_top.png
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_top.png',screen[1],true)
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_bottom.png',screen[2],true)
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom.png',screen[3],true)
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_top.png',screen[4],true)
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_bottom.png',screen[5],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_top_2.png',screen[1],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_bottom_2.png',screen[2],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_top_2.png',screen[3],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom_2.png',screen[4],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_top_2.png',screen[5],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_bottom_2.png',screen[6],true)
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
-    -- set_wallpaper(s)
+    --set_wallpaper(s)
 
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
@@ -276,6 +278,9 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({ modkey, "Shift" }, "a", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-down.sh") end),
+    awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-up.sh") end),
+    awful.key({ modkey, "Shift" }, "d", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-region.sh") end),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
