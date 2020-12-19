@@ -260,4 +260,5 @@ sudo apt install nmap
 sudo apt install dbeaver
 sudo apt install unrar
 sudo apt install openjdk-11-jre openjdk-11-jdk
+sudo apt install kazam
 ```
