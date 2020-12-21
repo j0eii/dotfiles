@@ -1,0 +1,19 @@
+# Paste below in /usr/share/libinput/local-overrides.quirks
+# 2nd generation trackpad can be connected over Bluetooth as well as USB.
+[Apple Magic Trackpad v2 (2015)]
+MatchVendor=0x05AC
+MatchProduct=0x0265
+AttrSizeHint=162x115
+AttrTouchSizeRange=20:10
+AttrPalmSizeThreshold=900
+AttrThumbSizeThreshold=800
+AttrPalmPressureThreshold=190
+
+[Apple Magic Trackpad v2 Bluetooth (new vendor ID)]
+MatchBus=bluetooth
+MatchVendor=0x004C
+MatchProduct=0x0265
+AttrTouchSizeRange=20:10
+AttrPressureRange=3:0
+AttrPalmSizeThreshold=900
+AttrThumbSizeThreshold=700

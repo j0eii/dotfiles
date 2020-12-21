@@ -87,6 +87,8 @@ __Monitors__
   - Add a new feature to top left button, you can now perform a 4-way scrolling via clicking top-left btn at the sametime
 - JBL Pebbles
   - Add __vol-up.sh__ & __vol-down.sh__ for cli/hot keys config to toggle volume
+- Apple Magic Trackpad v2 (2015)
+  - Check the configs in .apple-magictrackpad-confs
 
 ## Installation
 
