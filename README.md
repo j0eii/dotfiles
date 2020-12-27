@@ -134,13 +134,41 @@ reboot
 cp dotfiles/.apple-magictrackpad-confs/local-overrides.quirks /usr/share/libinput/local-overrides.quirks
 # Fix pressure problem
 cp dotfiles/.apple-magictrackpad-confs/90-magictrackpad.conf /usr/share/X11/xorg.conf.d/90-magictrackpad.conf
+```
 
+#### Fix mouse slow acceleration problem
 
+__under xfce4__
+
+```
 ## you need to logout to take effects
 # Fix sensitivity problem
 mkdir -p ~/.config/xfce4/xfconf/xfce-perchannel-xml
 cp dotfiles/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml
 ```
+
+__under awesome wm__
+
+Add a boot session script as follows:
+
+```bash
+#!/bin/bash
+APPLE_DEV_ID=`xinput list | grep 'Apple Inc. Magic Trackpad 2' | cut -f 2 -d '=' | cut -f 1 -d '['`
+if [[ ! -z "$APPLE_DEV_ID" ]]; then
+  # Set tab as left click
+  xinput set-prop $APPLE_DEV_ID 309 1
+  # Set accel speed
+  xinput set-prop $APPLE_DEV_ID 302 0.55
+fi
+
+KEN_DEV_ID=`xinput list | grep 'Kensington Slimblade Trackball' | cut -f 2 -d '=' | cut -f 1 -d '['`
+if [[ ! -z "$KEN_DEV_ID" ]]; then
+  xinput set-prop $APPLE_DEV_ID 302 0.55
+fi
+```
+
+read more here: https://askubuntu.com/questions/172972/configure-mouse-speed-not-pointer-acceleration
+
 
 #### Volume Control
 

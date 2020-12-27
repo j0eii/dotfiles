@@ -182,6 +182,7 @@ local function set_wallpaper(s)
     end
 end
 
+-- Custom config ends here
 -- Config new screens
 --local geo = screen[1].geometry
 --local new_width = math.ceil(geo.width/2)
@@ -209,6 +210,7 @@ gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_top_2.png
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom_2.png',screen[4],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_top_2.png',screen[5],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_bottom_2.png',screen[6],true)
+-- Custom config ends here
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
@@ -278,9 +280,11 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+-- Custom config starts here
     awful.key({ modkey, "Shift" }, "a", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-down.sh") end),
     awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-up.sh") end),
     awful.key({ modkey, "Shift" }, "d", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-region.sh") end),
+-- Custom config ends here
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
@@ -550,11 +554,11 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
--- Custom configs starts here
+-- Custom config starts here
 { rule = { class = "x-terminal-emulator" },
         properties = { opacity = 0.8 } },
 }
--- Custom configs ends here
+-- Custom config ends here
 -- }}}
 
 -- {{{ Signals
@@ -622,6 +626,16 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 --
 --
--- Custom configs starts here
-awful.util.spawn("compton")
--- Custom configs ends here
+-- Custom config starts here
+autorun = true
+autorunApps =
+{
+   "compton",
+   "/home/engineer/.sh-scripts/boot-session.sh",
+}
+if autorun then
+   for app = 1, #autorunApps do
+       awful.util.spawn(autorunApps[app])
+   end
+end
+-- Custom config ends here
