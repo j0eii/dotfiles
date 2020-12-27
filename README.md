@@ -126,6 +126,22 @@ sudo cp dotfiles/.x11-confs/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slim
 reboot
 ```
 
+#### Apple Magic Trackpad v2 (2015)
+
+```
+## you need to reboot to take effects
+
+cp dotfiles/.apple-magictrackpad-confs/local-overrides.quirks /usr/share/libinput/local-overrides.quirks
+# Fix pressure problem
+cp dotfiles/.apple-magictrackpad-confs/90-magictrackpad.conf /usr/share/X11/xorg.conf.d/90-magictrackpad.conf
+
+
+## you need to logout to take effects
+# Fix sensitivity problem
+mkdir -p ~/.config/xfce4/xfconf/xfce-perchannel-xml
+cp dotfiles/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml
+```
+
 #### Volume Control
 
 ```
@@ -195,6 +211,15 @@ cp dotfiles/.zshrc_extends ~
 echo "source .zshrc_extends" >> ~/.zshrc
 ```
 
+### feh
+
+```bash
+cp -r dotfiles/.config/feh ~/.config/
+```
+
+You may now try to use space key to preview any images in your file manager(My preferences is Thunar), it works like MacOS preview.
+
+
 #### base Awesome UI via xfce gtk3+ custom themes & icons
 
 Credits
@@ -223,14 +248,16 @@ cp -r dotfiles/.xfce4-colorschemes/*.theme ~/.local/share/xfce4/terminal/colorsc
 Then, config in xfce4 terminal perferences > appearances
 
 
-### feh
+### Hot fix
+
+Config lightdm-gtk-greeter-settings to make sure you can select the session when its broken.
+
 
 ```bash
-cp -r dotfiles/.config/feh ~/.config/
+sudo lightdm-gtk-greeter-settings
 ```
 
-You may now try to use space key to preview any images in your file manager (My preferences is Thunar).
-
+![Panel Config](./screenshots/00_lightdm-gtk-greeter-settings.png)
 
 ### Others
 
