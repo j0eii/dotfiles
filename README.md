@@ -1,4 +1,4 @@
-#J0eii Hex Workstation Setup
+# J0eii Hex Workstation Setup
 
 ![j0eii Hex Workstation](j0eii.gif)
 [CHECK INSIDE](./screenshots/WH@T_1_D0.png)

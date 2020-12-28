@@ -1,4 +1,4 @@
 #!/bin/bash
-slock
+slock &
 sleep 2
 systemctl suspend
