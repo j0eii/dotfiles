@@ -109,6 +109,24 @@ sudo apt install fcitx fcitx-table-quick-classic
 
 You also need to install [__Hack Nerd Font__](https://www.nerdfonts.com/font-downloads) and [__Hack Font__](https://sourcefoundry.org/hack/).
 
+### Windows Manager - awesome wm
+
+``` 
+sudo apt install awesome * awesome stable 4.3
+```
+
+Then, config the nice module, you may directly visit https://github.com/mut-ex/awesome-wm-nice/tree/awesome-4v3-stable
+Please remind that the awesome 4.3 stable & awesome 4.3 git version require different nice package.
+The `picom` is optional under xubuntu + nvidia + xinerama setup, please skip it because it doesn't work under disable composite mode.
+
+Next, you can check the reference of my awesome `.config/awesome/rc.lua` config, I marked all custom config as 
+```
+-- Custom config starts here
+...
+-- Custom config ends here
+```
+
+
 ### Hardware
 
 #### Nvidia Xinerama Setup
