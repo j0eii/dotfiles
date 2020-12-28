@@ -1,4 +1,7 @@
-# J0eii Hex Workstation Setup
+#J0eii Hex Workstation Setup
+
+![j0eii Hex Workstation](j0eii.gif)
+[CHECK INSIDE](./screenshots/WH@T_1_D0.png)
 
 ## System Configs
 
@@ -357,4 +360,5 @@ sudo apt install dbeaver
 sudo apt install unrar
 sudo apt install openjdk-11-jre openjdk-11-jdk
 sudo apt install kazam
+sudo apt install suckless-tools
 ```
