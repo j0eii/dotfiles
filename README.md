@@ -20,7 +20,7 @@ GPU: NVIDIA GeForce GTX 1050    (Gigabyte G1 Gaming)
 Memory: 5530MiB / 32076MiB
 ```
 
-## Perpherials
+## Peripherals
 
 - Kensington Slimblade
 - JBL Pebbles
@@ -47,12 +47,12 @@ __Monitors__
 
 ### Software
 
-- NVim
-  - Plugging to original vim
-  - fix the vim <-> tmux <-> system clipboard sometimes broken issue
 - Vim
   - Mouse support
   - system-wide clipboard support
+- NVim
+  - Plugging to original vim
+  - fix the vim <-> tmux <-> system clipboard sometimes broken issue
 - Tmux
   - mouse & color support
 - fcitx
@@ -62,21 +62,21 @@ __Monitors__
   - Arrow key support
   - Shortcut for __;__ to __:__
   - Ruler
-  - Systemwide clipboard support
+  - System wide clipboard support
 - Zsh
   - add antigen and custom alias
    - add git, command-not-found, docker, auto completions plugin
-   - by default it use powerlevel9k theme
+   - by default, it uses powerlevel9k theme
   - l = ls -la
   - c = clear
-  - pbcopy = copy stdoutput to systemwide clipboard
+  - pbcopy = copy stdoutput to system wide clipboard
   - pbpaste = reverse pbcopy
   - ll = ls -laf
   - gaa = git add .
   - gc = git commit
- - xfce Terminal
+- xfce Terminal
   - load a few themes from [bas16-xfce4-terminal](https://github.com/afq984/base16-xfce4-terminal)
- - feh (= MacOS space key to preview image file)
+- feh (= macOS space key to preview image file)
   - change to default size as 500x500
   - auto scale and zoom to prevent over zoomed
 
@@ -88,7 +88,9 @@ __Monitors__
 - JBL Pebbles
   - Add __vol-up.sh__ & __vol-down.sh__ for cli/hot keys config to toggle volume
 - Apple Magic Trackpad v2 (2015)
-  - Check the configs in .apple-magictrackpad-confs
+  - Add tab emulate as click function
+  - Fix pressure issue
+  - Check the configs in `.apple-magictrackpad-confs`
 
 ## Installation
 
@@ -111,13 +113,15 @@ You also need to install [__Hack Nerd Font__](https://www.nerdfonts.com/font-dow
 
 #### Nvidia Xinerama Setup
 
-You need to custom config it yourself. Different hardware requires different setup.
+You need to custom config it yourself. Different hardware requires a different setup.
 
 ```
 cat dotfiles/.x11-confs/xorg.conf.xinerama
 sudo nvidia-settings # Config
 sudo service lightdm restart # Restart display manager
 ```
+
+![Sample config](./screenshots/03_example_nvidia-settings.png)
 
 #### Kensington Slimblade
 
@@ -245,7 +249,9 @@ echo "source .zshrc_extends" >> ~/.zshrc
 cp -r dotfiles/.config/feh ~/.config/
 ```
 
-You may now try to use space key to preview any images in your file manager(My preferences is Thunar), it works like MacOS preview.
+You may now try to use space key to preview any images in your file manager(My preferences is Thunar), it works like macOS preview.
+
+![feh preview](./screenshots/02_feh_preview.png)
 
 
 #### base Awesome UI via xfce gtk3+ custom themes & icons
@@ -277,15 +283,19 @@ cp -r dotfiles/.xfce4-colorschemes/onedark.theme ~/.local/share/xfce4/terminal/c
 
 Then, config in xfce4 terminal `perferences > appearances`
 
+For font choice, I use [Hasklug Nerd Font Light 12](https://github.com/ryanoasis/nerd-fonts).
+
+![xfce4 Terminal](./screenshots/01_xfce4_terminal.png)
 
 Refs:
+- https://github.com/ryanoasis/nerd-fonts
 - https://gist.github.com/fluxrad/f9ff8bf36c3f58e63265c34f2751ff18
 - https://github.com/joshdick/onedark.vim
 
 
 ### Hot fix
 
-Config lightdm-gtk-greeter-settings to make sure you can select the session when its broken.
+Config `lightdm-gtk-greeter-settings` to make sure you can select the session when it's broken.
 
 
 ```bash
