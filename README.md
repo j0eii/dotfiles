@@ -271,9 +271,16 @@ lxappearance # config when awesomewm is your current wm
 ```bash
 mkdir -p ~/.local/share/xfce4/terminal/colorschemes
 cp -r dotfiles/.xfce4-colorschemes/*.theme ~/.local/share/xfce4/terminal/colorschemes
+# one dark only
+cp -r dotfiles/.xfce4-colorschemes/onedark.theme ~/.local/share/xfce4/terminal/colorschemes
 ```
 
-Then, config in xfce4 terminal perferences > appearances
+Then, config in xfce4 terminal `perferences > appearances`
+
+
+Refs:
+- https://gist.github.com/fluxrad/f9ff8bf36c3f58e63265c34f2751ff18
+- https://github.com/joshdick/onedark.vim
 
 
 ### Hot fix
