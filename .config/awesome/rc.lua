@@ -188,8 +188,11 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+-- Custom config starts here
+beautiful.useless_gap=3
 local nice = require("nice")
-nice()
+nice{titlebar_height=26, button_size=13, titlebar_radius=3}
+-- Custom config ends here
 -- }}}
 
 -- {{{ Menu
@@ -227,10 +230,10 @@ awful.util.mymainmenu = freedesktop.menu.build({
 --screen[1]:fake_resize(geo.x, geo.y, new_width, geo.height)
 --screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 --screen[0]:fake_resize(0,360,1920,1080)
-screen[1]:fake_resize(0,360,1920,1080)
+screen[1]:fake_resize(1920,1440,2560,1440)
 screen[2]:fake_resize(0,1440,1920,1080)
 screen.fake_add(1920,0,2560,1440)
-screen.fake_add(1920,1440,2560,1440)
+screen.fake_add(0,360,1920,1080)
 screen.fake_add(4480,360,1920,1080)
 screen.fake_add(4480,1440,1920,1080)
 --screen[3]:fake_resize(1920,360,2560,1440)
@@ -241,10 +244,10 @@ screen.fake_add(4480,1440,1920,1080)
 --1920x1080_right_top.png
 --2440x1440_bottom.png
 --2440x1440_top.png
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_top_2.png',screen[1],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_top_2.png',screen[4],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_left_bottom_2.png',screen[2],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_top_2.png',screen[3],true)
-gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom_2.png',screen[4],true)
+gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/2440x1440_bottom_2.png',screen[1],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_top_2.png',screen[5],true)
 gears.wallpaper.maximized('/home/engineer/Projects/wallpaper/1920x1080_right_bottom_2.png',screen[6],true)
 
@@ -293,11 +296,9 @@ globalkeys = my_table.join(
         awful.key({ modkey, "Shift" }, "a", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-down.sh") end),
         awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-up.sh") end),
         awful.key({ modkey, "Shift" }, "d", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-region.sh") end),
--- Custom config ends here
--- Take a screenshot
 -- https://github.com/lcpz/dots/blob/master/bin/screenshot
-        awful.key({ altkey }, "p", function() os.execute("screenshot") end,
-                {description = "take a screenshot", group = "hotkeys"}),
+        awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-auto.sh") end),
+-- Custom config ends here
 
 -- X screen locker
         awful.key({ altkey, "Control" }, "l", function () os.execute(scrlocker) end,
@@ -321,13 +322,13 @@ globalkeys = my_table.join(
                 {description = "view  previous nonempty", group = "tag"}),
 
 -- Default client focus
-        awful.key({ altkey,           }, "j",
+        awful.key({ altkey,           }, "u", -- Custom change "j" to "u" to prevent tmux & vim key conflict
                 function ()
                     awful.client.focus.byidx( 1)
                 end,
                 {description = "focus next by index", group = "client"}
         ),
-        awful.key({ altkey,           }, "k",
+        awful.key({ altkey,           }, "i", -- Custom change "k" to "i" to prevent tmux & vim key conflict
                 function ()
                     awful.client.focus.byidx(-1)
                 end,
@@ -821,6 +822,7 @@ autorun = true
 autorunApps =
 {
     --"picom", ## Doesnt work under nvidia composite
+    "nm-applet",
     "/home/engineer/.sh-scripts/boot-session.sh",
 }
 if autorun then

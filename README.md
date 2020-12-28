@@ -115,16 +115,20 @@ You also need to install [__Hack Nerd Font__](https://www.nerdfonts.com/font-dow
 sudo apt install awesome * awesome stable 4.3
 ```
 
-Then, config the nice module, you may directly visit https://github.com/mut-ex/awesome-wm-nice/tree/awesome-4v3-stable
-Please remind that the awesome 4.3 stable & awesome 4.3 git version require different nice package.
-The `picom` is optional under xubuntu + nvidia + xinerama setup, please skip it because it doesn't work under disable composite mode.
+Next, just download awesome wm nice and paste it in your ~/.config/awesome dir
+ - https://github.com/mut-ex/awesome-wm-nice
 
-Next, you can check the reference of my awesome `.config/awesome/rc.lua` config, I marked all custom config as 
+Then, config the nice module, please remind that the awesome 4.3 stable & awesome 4.3 git version require different nice package.
+The `picom` is optional under xubuntu + nvidia + xinerama setup, please skip it because it doesn't work under disable composite mode.
+- https://github.com/mut-ex/awesome-wm-nice/tree/awesome-4v3-stable
+
+Next, you can check the reference of my awesome `.config/awesome/rc.lua` config, I marked all custom config as
 ```
 -- Custom config starts here
 ...
 -- Custom config ends here
 ```
+Make sure to config the fake screen if you have multiple screen for use.
 
 
 ### Hardware
