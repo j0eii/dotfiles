@@ -295,7 +295,7 @@ globalkeys = my_table.join(
 -- Custom config starts here
         awful.key({ modkey, "Shift" }, "a", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-down.sh") end),
         awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn("/home/engineer/.sh-scripts/vol-up.sh") end),
-        awful.key({ modkey, "Shift" }, "d", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-region.sh") end),
+        -- awful.key({ modkey, "Shift" }, "d", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-region.sh") end),
 -- https://github.com/lcpz/dots/blob/master/bin/screenshot
         awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/engineer/.sh-scripts/screenshot-auto.sh") end),
 -- Custom config ends here
@@ -467,6 +467,8 @@ globalkeys = my_table.join(
                 {description = "dropdown application", group = "launcher"}),
 
 -- Widgets popups
+        -- Custom Configs
+        --[[
         awful.key({ altkey, }, "c", function () if beautiful.cal then beautiful.cal.show(7) end end,
                 {description = "show calendar", group = "widgets"}),
         awful.key({ altkey, }, "h", function () if beautiful.fs then beautiful.fs.show(7) end end,
@@ -563,6 +565,7 @@ globalkeys = my_table.join(
                 {description = "run browser", group = "launcher"}),
         awful.key({ modkey }, "a", function () awful.spawn(gui_editor) end,
                 {description = "run gui editor", group = "launcher"}),
+        ]]--
 
 -- Default
 --[[ Menubar
@@ -822,6 +825,7 @@ autorun = true
 autorunApps =
 {
     --"picom", ## Doesnt work under nvidia composite
+    "blueman-applet",
     "nm-applet",
     "/home/engineer/.sh-scripts/boot-session.sh",
 }
