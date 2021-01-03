@@ -825,6 +825,8 @@ autorun = true
 autorunApps =
 {
     --"picom", ## Doesnt work under nvidia composite
+    -- Disable auto turnoff screen
+    "xset s off",
     "blueman-applet",
     "nm-applet",
     "/home/engineer/.sh-scripts/boot-session.sh",
