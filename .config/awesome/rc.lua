@@ -747,13 +747,20 @@ awful.rules.rules = {
     {
         rule = {
             class = "jetbrains-studio",
+            name="^(?!(win[0-9]+)).*$"
+        },
+        properties = { screen = 1, tag = awful.util.tagnames[3] },
+    },
+    {
+        rule = {
+            class = "jetbrains-studio",
             name="^win[0-9]+$"
         },
         properties = {
             placement = awful.placement.no_offscreen,
             titlebars_enabled = false
         }
-    }
+    },
 }
 -- }}}
 
