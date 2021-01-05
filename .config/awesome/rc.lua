@@ -742,6 +742,18 @@ awful.rules.rules = {
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
       properties = { maximized = true } },
+
+    -- Jetbrains android studio bug fix
+    {
+        rule = {
+            class = "jetbrains-studio",
+            name="^win[0-9]+$"
+        },
+        properties = {
+            placement = awful.placement.no_offscreen,
+            titlebars_enabled = false
+        }
+    }
 }
 -- }}}
 
