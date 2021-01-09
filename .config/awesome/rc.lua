@@ -845,6 +845,7 @@ autorunApps =
 {
     --"picom", ## Doesnt work under nvidia composite
     -- Disable auto turnoff screen
+    "imwheel",
     "xset s off",
     "blueman-applet",
     "nm-applet",

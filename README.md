@@ -146,6 +146,8 @@ sudo nvidia-settings # Config
 sudo service lightdm restart # Restart display manager
 ```
 
+You also need to __disable the composite flag__ in the xorg.conf, it is not supported under xinerama.
+
 ![Sample config](./screenshots/03_example_nvidia-settings.png)
 
 #### Kensington Slimblade
@@ -154,6 +156,16 @@ sudo service lightdm restart # Restart display manager
 sudo cp dotfiles/.x11-confs/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
 reboot
 ```
+
+__Configuring the scroll wheel speed__
+
+``` 
+sudo apt install imwheel
+bash <(curl -s http://www.nicknorton.net/mousewheel.sh)
+```
+
+ref: http://www.nicknorton.net/
+
 
 #### Apple Magic Trackpad v2 (2015)
 
@@ -361,4 +373,5 @@ sudo apt install unrar
 sudo apt install openjdk-11-jre openjdk-11-jdk
 sudo apt install kazam
 sudo apt install suckless-tools
+sudo apt install imwheel
 ```
