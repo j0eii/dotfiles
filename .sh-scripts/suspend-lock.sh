@@ -1,4 +1,5 @@
 #!/bin/bash
+nordvpn disconnect
 slock &
-sleep 2
+sleep 3
 systemctl suspend
