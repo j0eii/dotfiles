@@ -18,6 +18,6 @@ fi
 
 CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "$CUR_DIR"
-killall 'fix-imwheel.sh'
+killall 'fix-imwheel.sh' &
 sleep 1
 ./fix-imwheel.sh &
